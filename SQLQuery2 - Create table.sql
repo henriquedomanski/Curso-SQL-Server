@@ -26,10 +26,32 @@ Loja de sucos do Henrique
 */
 
 
+
+--Aula 4 - criando base de dados pt1
 CREATE TABLE tb_DadosProduto (
-	nProduto VARCHAR(50) NOT NULL , --obrigatorio, nao recebe valor nulo
+	nmProduto VARCHAR(50) NOT NULL , --obrigatorio, nao recebe valor nulo
 	vlProduto DECIMAL (6,2) NOT NULL --maximo 6 valores e duas virgulas
 
 );
+
+
+
+--Aula 5- Criando base de dados pt2
+
+CREATE TABLE tb_Clientes (
+	nmCliente VARCHAR (50) NOT NULL , --nome do cliente
+	dtNascimento DATE, -- modelo para data de nascimento
+	tpSexo VARCHAR (1) NOT NULL, --sexo M OU F
+	nmEndereco VARCHAR (50), 
+	nmCidade VARCHAR (50), 
+	nmEstado VARCHAR (30),
+	nmTelefone1 VARCHAR (15),
+	nmTelefone2 VARCHAR (15) 
+
+
+);
+
+
+
 
 
