@@ -35,6 +35,7 @@ CREATE TABLE tb_Vendas (
 );
 
 
+
 -- FOREIGN KEY
 -- CONSTRAINT - REGRA, SOMENTE VAI PODER TER O CODIGO DO PRODUTO SE O CODIGO DO PRODUTO JA EXISTIR NA TABELA DE PRODUTOS
 
@@ -42,6 +43,8 @@ ALTER TABLE tb_Vendas -- sempre que for alterar a tabela
 ADD CONSTRAINT FK_Produto_Vendas
 FOREIGN KEY (idProduto)
 REFERENCES tb_Produtos  (idProduto)
+
+--Aula 9 - inserindo dados na tabela
 
 
 
