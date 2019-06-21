@@ -38,7 +38,7 @@ CREATE TABLE tb_Vendas (
 --Aula 11
 CREATE TABLE tb_ProdutoVenda (
 	idProdutoVenda INT IDENTITY (1,1),
-	idVenda INT FOREIGN KEY REFERENCES tb_Venda (idVenda) NOT NULL,
+	idVenda INT FOREIGN KEY REFERENCES tb_Vendas (idVenda) NOT NULL,
 	idProduto INT FOREIGN KEY REFERENCES tb_Produtos (idProduto),
 	qtProduto INT NOT NULL
 
