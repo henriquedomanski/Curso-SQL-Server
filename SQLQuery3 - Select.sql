@@ -2,7 +2,7 @@
 --SELECT [Colunas] FROM [tabela]
 
 
-
+--Aula 11
 SELECT nmProduto, idProduto, vlProduto FROM tb_Produtos;
 
 SELECT idProduto FROM tb_Produtos;

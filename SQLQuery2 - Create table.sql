@@ -29,8 +29,18 @@ CREATE TABLE tb_Clientes (
 --Aula 8 - Criando chaves secundarias ->
 CREATE TABLE tb_Vendas (
 	idVenda INT PRIMARY KEY IDENTITY (1,1),
-	idProduto INT NOT NULL,
-	vlProduto DECIMAL (6,2) NOT NULL, 
+	idCliente INT NOT NULL FOREIGN KEY REFERENCES tb_Clientes (idCliente),
+	dtVenda DATETIME NOT NULL 
+
+);
+
+
+--Aula 11
+CREATE TABLE tb_ProdutoVenda (
+	idProdutoVenda INT IDENTITY (1,1),
+	idVenda INT FOREIGN KEY REFERENCES tb_Venda (idVenda) NOT NULL,
+	idProduto INT FOREIGN KEY REFERENCES tb_Produtos (idProduto),
+	qtProduto INT NOT NULL
 
 );
 
@@ -43,6 +53,12 @@ ALTER TABLE tb_Vendas -- sempre que for alterar a tabela
 ADD CONSTRAINT FK_Produto_Vendas
 FOREIGN KEY (idProduto)
 REFERENCES tb_Produtos  (idProduto)
+
+--remover a tabela de vendas
+
+DROP TABLE tb_Vendas;
+
+
 
 --Aula 9 - inserindo dados na tabela
 
