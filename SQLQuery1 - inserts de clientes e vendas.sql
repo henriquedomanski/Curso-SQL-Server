@@ -15,3 +15,5 @@
 
 -- 3 - insert da venda
 --INSERT INTO tb_ProdutoVenda VALUES (1, 1, 3);
+--INSERT INTO tb_ProdutoVenda VALUES (1, 2, 1);
+--INSERT INTO tb_ProdutoVenda VALUES (1, 4, 4);
