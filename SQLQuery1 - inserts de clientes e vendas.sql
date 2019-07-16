@@ -1,19 +1,11 @@
--- Inserindo novas consultas
+/*
+	INSERT INTO tb_Clientes VALUES ('José Penha', '1977-05-07', 'M', 'Rua da Mecânica, 33', 'Campinas', 'São Paulo', '11 1233-4434', '11 99283-9099')
+	INSERT INTO tb_Clientes VALUES ('Zequinha Muriçoca', '1988-05-07', 'M', 'Rua Jambira, 13', 'Campinas', 'São Paulo', '11 1584-2214', '')
+	INSERT INTO tb_Clientes VALUES ('Mariazinha de Lá', '1981-05-07', 'F', 'Rua Jambira, 13', 'Campinas', 'São Paulo', '11 1584-2214', '')
+*/
 
---SELECT * FROM tb_Produtos;
---SELECT * FROM tb_Vendas;
---SELECT * FROM tb_Clientes;
---SELECT * FROM tb_ProdutoVenda;
+select * from tb_Clientes 
 
-
--- 1 - CRIAR CLIENTE:
---INSERT INTO tb_Clientes VALUES ('Paulo Guina', '1980-05-01', 'M', 'Rua da mecanica, 400', 'campinas', 'Sao Paulo', '11 1234-5678', '11 91011-1213');
-
-
--- 2 - insert da venda
---INSERT INTO tb_Vendas VALUES (1, GETDATE());
-
--- 3 - insert da venda
---INSERT INTO tb_ProdutoVenda VALUES (1, 1, 3);
---INSERT INTO tb_ProdutoVenda VALUES (1, 2, 1);
---INSERT INTO tb_ProdutoVenda VALUES (1, 4, 4);
+SELECT *
+INTO tb_ClientesBackup
+FROM tb_Clientes
