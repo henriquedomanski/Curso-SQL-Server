@@ -1,8 +1,10 @@
--- soma dos valores
+CREATE PROCEDURE sp_TotalVendasProdutosCliente (
+	@idCliente INT
+)
 
-SELECT * FROM tb_ProdutoVenda;
+AS
 
-SELECT * FROM tb_Produtos;
+
 
 -- seleção dos dados com valores
 SELECT V.idVenda, C.nmCliente, P.idProduto, P.nmProduto, PV.qtProduto, P.vlProduto, qtProduto * vlProduto AS qtValorTotalProduto, 
@@ -17,3 +19,7 @@ INNER JOIN (
 	GROUP BY V.idVenda
 
 )TOTAL_VENDAS ON V.idVenda = TOTAL_VENDAS.idVenda
+WHERE V.idCliente = @idCliente
+
+--sp_TotalVendasProdutosCliente 1
+
