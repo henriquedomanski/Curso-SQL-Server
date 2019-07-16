@@ -6,6 +6,6 @@
 
 select * from tb_Clientes 
 
-SELECT *
+/*SELECT *
 INTO tb_ClientesBackup
-FROM tb_Clientes
+FROM tb_Clientes*/
