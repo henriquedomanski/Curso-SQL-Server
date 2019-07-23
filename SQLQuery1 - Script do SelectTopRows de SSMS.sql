@@ -41,7 +41,7 @@ SELECT * FROM #tmp_Estados
 
 -- update na sigla
 
-UPDATE #tmp_Estados SET nmSigla = 'SP' WHERE nmEstado =  'São Paulo';
+UPDATE #tmp_Estados SET nmSigla = 'SP' WHERE nmEstado =  'Sao Paulo';
 
 SET IDENTITY_INSERT tb_Estados ON; -- INSERE na coluna de identity
 
@@ -50,10 +50,14 @@ SET IDENTITY_INSERT tb_Estados ON; -- INSERE na coluna de identity
 INSERT INTO tb_Estados (idEstado, nmEstado, nmSigla)
 SELECT idEstado, nmEstado, nmSigla FROM #tmp_Estados;
 
--- SELECT  * FROM #tmp_Estado
+-- SELECT  * FROM #tmp_Estados
 -- SELECT * FROM tb_Estados;
 
---DELETE FROM #tmp_Estados WHERE nmEstado = 'Sao Paulo';
+--DELETE FROM #tmp_Estados WHERE nmEstado = 'São Paulo';
+
+DROP TABLE #tmp_Estados;
+
+
 
 
 SET IDENTITY_INSERT tb_Estados OFF; 
