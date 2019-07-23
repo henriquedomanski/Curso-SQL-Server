@@ -29,7 +29,7 @@ BEGIN TRAN
 INSERT INTO #tmp_Estados (nmEstado)
 SELECT DISTINCT nmEstado FROM tb_Clientes ORDER BY nmEstado;
 
--- tratamento dos dadosdasdasxsdaqweqw
+-- tratamento dos dadosdasdasxsdaqweqweqweqdas
 
 
 
