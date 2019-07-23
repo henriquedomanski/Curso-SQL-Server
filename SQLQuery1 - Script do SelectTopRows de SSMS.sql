@@ -46,7 +46,7 @@ UPDATE #tmp_Estados SET nmSigla = 'SP' WHERE nmEstado =  'São Paulo';
 
 SET IDENTITY_INSERT tb_Estados ON; -- INSERE na coluna de identity
 
--- inserindo na tabela de estadoxxxs
+-- inserindo na tabela de estadoxxxsqweqw
 
 INSERT INTO tb_Estados (idEstado, nmEstado, nmSigla)
 SELECT idEstado, nmEstado, nmSigla FROM #tmp_Estados;
