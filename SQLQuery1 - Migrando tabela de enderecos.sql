@@ -16,3 +16,7 @@ ON C.nmCidade = CI.nmCidade;
 
 ROLLBACK TRAN;
 commit tran;
+
+
+
+--(Aula 28) - Explicando sobre chaves extrangeiras
