@@ -25,3 +25,5 @@ SELECT * FROM tb_Clientes_Hist;
 BEGIN TRAN; UPDATE tb_Clientes SET nmCliente = 'Jailson' WHERE idCliente = 1; 
 
 COMMIT TRAN;
+
+--TRIGERS sao gatinhos que podem ser disparados quando uma tabela recebe UPDATE, INSERT OU DETELE em album atributo. Quando uma informação nova é inserida no banco de dados vc pode ter um trigger q analisa essas informacoes e dependendo dos parametros que vc estabelece ele dispara um trigger e ira realizar um tipo de tarefa ou operação
