@@ -21,3 +21,5 @@ DROP COLUMN nmTelefone2;
 
 SELECT * FROM tb_Clientes
 
+-- SQL Server Intermediário (Aula 1) Esclarecendo Processamento e Regras de Negócio
+
