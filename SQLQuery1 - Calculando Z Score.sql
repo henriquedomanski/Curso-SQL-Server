@@ -22,3 +22,19 @@ FROM
 */
 
 
+--Usando a função rank
+
+SELECT
+	nmProduto,
+	vlProduto,
+	Posicao
+FROM (
+	SELECT 
+		nmProduto,
+		vlProduto,
+		RANK() OVER(ORDER BY vlProduto desc) as Posicao
+FROM 
+	tb_Produtos
+	) Dados
+WHERE 
+	Posicao BETWEEN 5 and 10
