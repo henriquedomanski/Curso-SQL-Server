@@ -1,22 +1,36 @@
 
+
+CREATE PROCEDURE sp_TotalVendasProdutosCliente(
+
+		@cdCliente INT
+
+
+
+)
+
+AS 
+
+
+
 -- Seleção dos dados com valores
 
-SELECT V.cdVenda, C.nmCliente, P.cdProduto, P.nmProduto, PV.qtProduto, P.vlProduto, qtProduto * vlProduto AS qtValorTotalProduto
+SELECT V.cdVenda, C.nmCliente, P.cdProduto, P.nmProduto, PV.qtProduto, P.vlProduto, qtProduto * vlProduto AS qtValorTotalProduto, TOTAL_VENDAS.qtTotalPordutos, TOTAL_VENDAS.qtValorTotalVenda
 	FROM tb_Produtos P INNER JOIN tb_ProdutoVenda PV ON P.cdProduto = PV.cdProduto
 	INNER JOIN tb_Vendas V ON PV.cdVenda = V.cdVenda 
 	INNER JOIN tb_Clientes C ON V.cdCliente = C.cdCliente
+	
+	
+	
+	INNER JOIN (
 
-
-	--soma dos valores
-
-/*SELECT C.nmCliente, SUM (PV.qtProduto) AS qtTotalPordutos, P.nmProduto, SUM (P.vlProduto) --, P.vlProduto, qtProduto * vlProduto AS qtValorTotalProduto
+SELECT V.cdVenda, SUM (PV.qtProduto) AS qtTotalPordutos, SUM (P.vlProduto * PV.qtProduto) AS qtValorTotalVenda --, P.vlProduto, qtProduto * vlProduto AS qtValorTotalProduto
 FROM tb_Produtos P INNER JOIN tb_ProdutoVenda PV ON P.cdProduto = PV.cdProduto
 INNER JOIN tb_Vendas V ON PV.cdVenda = V.cdVenda 
-INNER JOIN tb_Clientes C ON V.cdCliente = C.cdCliente
-GROUP BY C.nmCliente, P.nmProduto */
+GROUP BY V.cdVenda
 
-SELECT C.nmCliente, SUM (PV.qtProduto) AS qtTotalPordutos, SUM (P.vlProduto * PV.qtProduto) AS qtValorTotalVenda --, P.vlProduto, qtProduto * vlProduto AS qtValorTotalProduto
-FROM tb_Produtos P INNER JOIN tb_ProdutoVenda PV ON P.cdProduto = PV.cdProduto
-INNER JOIN tb_Vendas V ON PV.cdVenda = V.cdVenda 
-INNER JOIN tb_Clientes C ON V.cdCliente = C.cdCliente
-GROUP BY C.nmCliente
+) TOTAL_VENDAS ON V.cdVenda = TOTAL_VENDAS.cdVenda
+
+WHERE V.cdVenda = @cdCliente
+
+
+-- sp_TotalVendasProdutosCliente 1
